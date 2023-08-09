@@ -1,0 +1,116 @@
+﻿Country,location,on/off shore,competing with,west_lon,east_lon,north_lat,south_lat
+Norway,NOR1onshore,onshore,onshore wind/PV,7.5,7.75,60.25,60
+Norway,NOR2onshore,onshore,onshore wind/PV,10.25,10.5,62.75,62.5
+Norway,NOR3onshore,onshore,onshore wind/PV,14.25,14.5,65.5,65.25
+Norway,NOR4onshore,onshore,onshore wind/PV,25.75,26,70.25,70
+Norway,NOR5onshore,onshore,onshore wind/PV,22.5,22.75,69.75,69.5
+Norway,NOR6float,offshore,float,5.25,5.5,58.25,58
+Norway,NOR7float,offshore,float,3.25,3.5,62.25,62
+Norway,NOR8float,offshore,float,9.75,10,67,66.75
+Norway,NOR9float,offshore,float,26,26.25,72.5,72.25
+Norway,NOR10float,offshore,float,17,17.25,71.5,71.25
+Norway,NOR6fixed,offshore,fixed,5.25,5.5,59,58.75
+Norway,NOR7fixed,offshore,fixed,11.75,12,65.5,65.25
+Norway,NOR8fixed,offshore,fixed,16.25,16.5,69.5,69.25
+Norway,NOR9fixed,offshore,fixed,20.5,20.75,70.5,70.25
+Sweden,SWE1onshore,onshore,onshore wind/PV,13,13.25,58.25,58
+Sweden,SWE2onshore,onshore,onshore wind/PV,15.5,15.75,58.5,58.25
+Sweden,SWE3onshore,onshore,onshore wind/PV,19.5,19.75,64.5,64.25
+Sweden,SWE4onshore,onshore,onshore wind/PV,13.25,13.5,63.25,63
+Sweden,SWE5onshore,onshore,onshore wind/PV,16.25,16.5,60.5,60.25
+Sweden,SWE6float,offshore,float,10.5,10.75,58.5,58.25
+Sweden,SWE7float,offshore,float,18,18.25,58.25,58
+Sweden,SWE8float,offshore,float,19,19.25,62.5,62.25
+Sweden,SWE9float,offshore,float,22.5,22.75,65,64.75
+Sweden,SWE10float,offshore,float,19.75,20,59,58.75
+Sweden,SWE11float,offshore,float,19,19.25,56.5,56.25
+Sweden,SWE12float,offshore,float,15.75,16,55.5,55.25
+Sweden,SWE6fixed,offshore,fixed,22.25,22.5,65.5,65.25
+Sweden,SWE7fixed,offshore,fixed,20.25,20.5,63.5,63.25
+Sweden,SWE8fixed,offshore,fixed,12.25,12.5,56.75,56.5
+Sweden,SWE9fixed,offshore,fixed,17.25,17.5,56,55.75
+Sweden,SWE10fixed,offshore,fixed,13.25,13.5,55.25,55
+Denmark,DEN1onshore,onshore,onshore wind/PV,9,9.25,55.25,55
+Denmark,DEN2onshore,onshore,onshore wind/PV,8.5,8.75,56.25,56
+Denmark,DEN3onshore,onshore,onshore wind/PV,10.5,10.75,56.5,56.25
+Denmark,DEN4onshore,onshore,onshore wind/PV,11.25,11.5,55,54.75
+Denmark,DEN5onshore,onshore,onshore wind/PV,10.5,10.75,55.25,55
+Denmark,DEN6float,offshore,float,15.5,15.75,55.5,55.25
+Denmark,DEN7float,offshore,float,10,10.25,58.25,58
+Denmark,DEN8float,offshore,float,5.5,5.75,56.5,56.25
+Denmark,DEN6fixed,offshore,fixed,7.25,7.5,56.75,56.5
+Denmark,DEN7fixed,offshore,fixed,7.25,7.5,55.75,55.5
+Denmark,DEN8fixed,offshore,fixed,11.25,11.5,56.5,56.25
+Denmark,DEN9fixed,offshore,fixed,12.25,12.5,54.75,54.5
+Germany,GER1onshore,onshore,onshore wind/PV,12.75,13,53.5,53.25
+Germany,GER2onshore,onshore,onshore wind/PV,11,11.25,52.25,52
+Germany,GER3onshore,onshore,onshore wind/PV,8,8.25,53,52.75
+Germany,GER4onshore,onshore,onshore wind/PV,10.5,10.75,51.5,51.25
+Germany,GER5onshore,onshore,onshore wind/PV,9.25,9.5,54.5,54.25
+Germany,GER6fixed,offshore,fixed,7.25,7.5,55,54.75
+Germany,GER7fixed,offshore,fixed,6.75,7,54,53.75
+Germany,GER8fixed,offshore,fixed,11.5,11.75,54.5,54.25
+Germany,GER9fixed,offshore,fixed,14,14.25,55,54.75
+Netherlands,NED1onshore,onshore,onshore wind/PV,3.75,4,51.75,51.5
+Netherlands,NED2onshore,onshore,onshore wind/PV,4.75,5,52.25,52
+Netherlands,NED3onshore,onshore,onshore wind/PV,5.5,5.75,53.25,53
+Netherlands,NED4onshore,onshore,onshore wind/PV,5.75,6,52.75,52.5
+Netherlands,NED5onshore,onshore,onshore wind/PV,6.75,7,53.25,53
+Netherlands,NED6fixed,offshore,fixed,3.25,3.5,52,51.75
+Netherlands,NED7fixed,offshore,fixed,3.75,4,53,52.75
+Netherlands,NED8fixed,offshore,fixed,4,4.25,54.5,54.25
+Netherlands,NED9fixed,offshore,fixed,5.75,6,54,53.75
+Belgium,BEL1onshore,onshore,onshore wind/PV,2.75,3,50.75,51
+Belgium,BEL2onshore,onshore,onshore wind/PV,3.5,3.75,50.75,50.5
+Belgium,BEL3onshore,onshore,onshore wind/PV,4.75,5,50.75,50.5
+Belgium,BEL4onshore,onshore,onshore wind/PV,4.25,4.5,50.25,50
+Belgium,BEL5onshore,onshore,onshore wind/PV,4,4.25,51.25,51
+Belgium,BEL4fixed,offshore,fixed,2.5,2.75,51.75,51.5
+Belgium,BEL5fixed,offshore,fixed,2.75,3,51.5,51.25
+Luxembourg,LUX1onshore,onshore,onshore wind/PV,6,6.25,49.75,49.5
+France,FRA1onshore,onshore,onshore wind/PV,2,2.25,50.5,50.25
+France,FRA2onshore,onshore,onshore wind/PV,-1.25,-1,49,48.75
+France,FRA3onshore,onshore,onshore wind/PV,2.75,3,43.25,43
+France,FRA4onshore,onshore,onshore wind/PV,4.5,4.75,43.75,43.5
+France,FRA5onshore,onshore,onshore wind/PV,-3.5,-3.25,48.5,48.25
+France,FRA6onshore,onshore,onshore wind/PV,-0.5,-0.25,46.75,46.5
+France,FRA6float,offshore,float,-1.5,-1.25,50,49.75
+France,FRA7float,offshore,float,-5,-4.75,49,48.75
+France,FRA8float,offshore,float,-4.75,-4.5,47.25,47
+France,FRA9float,offshore,float,-3.5,-3.25,46,45.75
+France,FRA10float,offshore,float,4.5,4.75,43,42.75
+France,FRA6fixed,offshore,fixed,0.5,0.75,50.25,50
+France,FRA7fixed,offshore,fixed,-2.5,-2.25,49,48.75
+France,FRA8fixed,offshore,fixed,-2.75,-2.5,47.25,47
+France,FRA9fixed,offshore,fixed,-2,-1.75,46,45.75
+France,FRA10fixed,offshore,fixed,4,4.25,43.5,43.25
+UK,UK1onshore,onshore,onshore wind/PV,-4,-3.75,51,50.75
+UK,UK2onshore,onshore,onshore wind/PV,-1.75,-1.5,51.5,51.25
+UK,UK3onshore,onshore,onshore wind/PV,0.25,0.5,52.5,52.25
+UK,UK4onshore,onshore,onshore wind/PV,-4,-3.75,52.25,52
+UK,UK5onshore,onshore,onshore wind/PV,-0.5,-0.25,53.25,53
+UK,UK6onshore,onshore,onshore wind/PV,-2.75,-2.5,55.75,55.5
+UK,UK7onshore,onshore,onshore wind/PV,-3,-2.75,57.5,57.25
+UK,UK6float,offshore,float,-6,-5.75,49.5,49.25
+UK,UK7float,offshore,float,0.5,0.75,55.25,55
+UK,UK8float,offshore,float,-1,-0.75,58.75,58.5
+UK,UK9float,offshore,float,-4,-3.75,59,58.75
+UK,UK10float,offshore,float,-8.5,-8.25,58.75,58.5
+UK,UK6fixed,offshore,fixed,-4,-3.75,53.75,53.5
+UK,UK7fixed,offshore,fixed,-4.75,-4.5,51.5,51.25
+UK,UK8fixed,offshore,fixed,1.75,2,52,51.75
+UK,UK9fixed,offshore,fixed,1.5,1.75,53.75,53.5
+UK,UK10fixed,offshore,fixed,-3.25,-3,58,57.75
+Ireland,IRE1onshore,onshore,onshore wind/PV,-9,-8.75,52,51.75
+Ireland,IRE2onshore,onshore,onshore wind/PV,-8,-7.75,54.5,54.25
+Ireland,IRE3onshore,onshore,onshore wind/PV,-7.5,-7.25,53.25,53
+Ireland,IRE4onshore,onshore,onshore wind/PV,-7.5,-7.25,52.5,52.25
+Ireland,IRE5onshore,onshore,onshore wind/PV,-6.75,-6.5,53,52.75
+Ireland,IRE6float,offshore,float,-9.5,-9.25,55,54.75
+Ireland,IRE7float,offshore,float,-11.25,-11,53,52.75
+Ireland,IRE8float,offshore,float,-10.5,-10.25,51,50.75
+Ireland,IRE9float,offshore,float,-7.25,-7,51.75,51.5
+Ireland,IRE6fixed,offshore,fixed,-9,-8.75,54.5,54.25
+Ireland,IRE7fixed,offshore,fixed,-7.5,-7.25,55.75,55.5
+Ireland,IRE8fixed,offshore,fixed,-7.5,-7.25,52,51.75
+Ireland,IRE9fixed,offshore,fixed,-6,-5.75,54,53.75
