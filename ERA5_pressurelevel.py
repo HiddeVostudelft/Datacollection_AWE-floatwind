@@ -123,6 +123,5 @@ capfactable=capfactable.rename(columns={"Netherlands":"NLD","Germany":"DEU","Bel
 capfacavg=capfactable.mean(axis=0)
 
 ##export to CSV, make sure to adjust the name when running a new set of coordinates or a new technology
-#capfactable.to_csv(outputpath + '\\capacityfactors\\renewablesninja\\offshorewind_fixed.csv')
 outputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION\capacityfactors'
 capfactable.to_csv(outputpath + '\\ERA5_pressurelevel\\AWE_onshore_pl.csv')
