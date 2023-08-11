@@ -12,8 +12,20 @@ import csv
 import numpy as np
 import time
 
+inputpath= 'YOUR DIRECTORY TO THIS FOLDER'
+outputpath= inputpath + '\\capacityfactors\\'
+
+#SELECT COORDINATES
 coordinates=pd.read_csv('offshore_fixed_renninja_coordinates.csv')  #Fixed-Bottom offshore wind turbines
-# coordinates=pd.read_csv('offshore_float_renninja_coordinates.csv') #Flaoting wind turbines
+# coordinates=pd.read_csv('offshore_float_renninja_coordinates.csv') #Floating wind turbines
+
+#SELECT CSV NAME CORRESPONDING TO COORDINATES
+csvname='Offshorewind.csv'
+csvname='Floatingwind.csv'
+
+#POWER CURVE 15MW IEA TURBINE
+power_curve=pd.read_csv(inputpath + '\\power_curves\\IEA_15MW_offshore.csv')
+
 daterange=pd.read_csv('daterange_renewablesninja.csv')
 startdate=daterange['date_from']
 enddate=daterange['date_to']
@@ -28,9 +40,6 @@ turbine = 'Vestas V80 2000' #could be any turbine, the wind speed matters
 format = 'json'
 raw = 'true'
 
-inputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION'
-outputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION\capacityfactors\renewablesninja'
-power_curve=pd.read_csv(inputpath + '\\power_curves\\IEA_15MW_offshore.csv')
 longitudes=coordinates['longitude']
 latitudes=coordinates['latitude']
 location=coordinates['location']
@@ -72,5 +81,5 @@ capfactable.columns=capfactable.columns.droplevel()
 capfactable=capfactable.rename(columns={"Denmark":"DNK","France":"FRA","Ireland":"IRL","Norway":"NOR","Sweden":"SWE","UK":"GBR"}) #floating only
 capfactable=capfactable.rename(columns={"Netherlands":"NLD","Germany":"DEU","Belgium":"BEL"}) #fixed offshore
 
-# capfactable.to_csv(outputpath + '\\capacityfactors\\renewablesninja\\offshorewind_float.csv') # floating 
-capfactable.to_csv(outputpath + '\\offshorewind_fixed.csv') # fixed offshore
+capfactable.to_csv(outputpath + csvname) 
+
