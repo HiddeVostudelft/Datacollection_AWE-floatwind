@@ -19,7 +19,7 @@ outputpath= inputpath + '\\capacityfactors\\'
 power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing1.csv')
 # power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing2_offshore.csv')
 
-SELECT CORRECT SET OF COORDINATES
+#SELECT CORRECT SET OF COORDINATES
 coordinates=pd.read_csv('AWEcoordinates_shallow.csv') #shallow water AWE
 # coordinates=pd.read_csv('AWEcoordinates_deep.csv') # deep water AWE
 
