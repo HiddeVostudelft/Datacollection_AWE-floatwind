@@ -13,8 +13,8 @@ import datetime
 import numpy as np
 
 #PATHS AND SETTINGS FOR ONSHORE AWE
-inputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION'
-outputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION\capacityfactors'
+inputpath= 'YOUR DIRECTORY TO THIS FOLDER'
+outputpath= inputpath + '\\capacityfactors\\'
 csvname='awe_onshore_sw.csv'
 power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_500kw_softwing.csv')
 
