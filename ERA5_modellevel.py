@@ -12,15 +12,11 @@ import csv
 import datetime
 import numpy as np
 
+#PATHS AND SETTINGS FOR ONSHORE AWE
 inputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION'
-output_directory= inputpath + '\\netcdfs\\modellevel\\'
-
-##SELECT POWER CURVE
+outputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION\capacityfactors'
+csvname='awe_onshore_sw.csv'
 power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_500kw_softwing.csv')
-# power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing1.csv')
-# power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing2_offshore.csv')
-# power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing2_onshore.csv')
-# power_curve=pd.read_csv(inputpath + '\\power_curves\\IEA_15MW_offshore.csv')
 
 coordinates=pd.read_csv('AWEcoordinates_onshore.csv')
 westlongitudes=coordinates['west_lon']
@@ -35,6 +31,7 @@ country=coordinates['Country']
 
 #%%
 # DATA COLLECTION API
+output_directory= inputpath + '\\netcdfs\\modellevel\\'
 import cdsapi
 c = cdsapi.Client()
 for wlon, elon, nlat, slat, fil in zip(westlongitudes, eastlongitudes, northlatitudes, southlatitudes, filename):
@@ -96,8 +93,8 @@ capfactable=capfactable.rename(columns={"Netherlands":"NLD","Germany":"DEU","Bel
 capfacavg=capfactable.mean(axis=0)
 
 ##export to CSV, make sure to adjust the name when running a new set of coordinates or a new technology
-outputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION\capacityfactors'
-capfactable.to_csv(outputpath + '\\ERA5_modellevel\\AWE_onshore_ml.csv')
+
+capfactable.to_csv(outputpath + '\\ERA5_modellevel\\' + csvname)
 
 
 
