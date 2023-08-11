@@ -24,10 +24,10 @@ coordinates=pd.read_csv('AWEcoordinates_shallow.csv') #shallow water AWE
 # coordinates=pd.read_csv('AWEcoordinates_deep.csv') # deep water AWE
 
 #SELECT CORRECT OUTPUT CSV NAME ACCORDING TO SELECTED POWER CURVE AND COORDINATES
-csvname=AWE_shallow_fw1.csv
-#csvname=AWE_shallow_fw2.cv
-#csvname=AWE_deep_fw1.csv
-#csvname=AWE_deep_fw2.csv
+csvname='AWE_shallow_fw1.csv'
+#csvname='AWE_shallow_fw2.cv'
+#csvname='AWE_deep_fw1.csv'
+#csvname='AWE_deep_fw2.csv'
 
 westlongitudes=coordinates['west_lon']
 eastlongitudes=coordinates['east_lon']
