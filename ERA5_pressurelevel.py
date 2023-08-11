@@ -12,19 +12,23 @@ import csv
 import datetime
 import numpy as np
 
-inputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION'
-output_directory= inputpath + '\\netcdfs\\pressurelevel\\'
+inputpath= 'YOUR DIRECTORY TO THIS FOLDER'
+outputpath= inputpath + '\\capacityfactors\\'
 
 ##SELECT POWER CURVE
-power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_500kw_softwing.csv')
-# power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing1.csv')
+power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing1.csv')
 # power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing2_offshore.csv')
-# power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing2_onshore.csv')
-# power_curve=pd.read_csv(inputpath + '\\power_curves\\IEA_15MW_offshore.csv')
 
+SELECT CORRECT SET OF COORDINATES
+coordinates=pd.read_csv('AWEcoordinates_shallow.csv') #shallow water AWE
 # coordinates=pd.read_csv('AWEcoordinates_deep.csv') # deep water AWE
-# coordinates=pd.read_csv('AWEcoordinates_shallow.csv') #shallow water AWE
-coordinates=pd.read_csv('AWEcoordinates_onshore.csv') # onshore AWE
+
+#SELECT CORRECT OUTPUT CSV NAME ACCORDING TO SELECTED POWER CURVE AND COORDINATES
+csvname=AWE_shallow_fw1.csv
+#csvname=AWE_shallow_fw2.cv
+#csvname=AWE_deep_fw1.csv
+#csvname=AWE_deep_fw2.csv
+
 westlongitudes=coordinates['west_lon']
 eastlongitudes=coordinates['east_lon']
 northlatitudes=coordinates['north_lat']
@@ -35,7 +39,9 @@ location=coordinates['location']
 location=location.tolist()
 country=coordinates['Country']
 
-#%%
+#%% API REQUEST
+output_directory= inputpath + '\\netcdfs\\pressurelevel\\'
+
 import cdsapi
 c = cdsapi.Client()
 for wlon, elon, nlat, slat, fil in zip(westlongitudes, eastlongitudes, northlatitudes, southlatitudes, filename):
@@ -80,12 +86,11 @@ for wlon, elon, nlat, slat, fil in zip(westlongitudes, eastlongitudes, northlati
         'format': 'netcdf', 
         }, output_directory + fil )
     
-#%%
+#%% DATA PROCESSING
 datetimeindex=pd.date_range("2013-01-01", periods= 52584, freq="H")
 
 df_list = []
 windspeed_avg_location={}
-
 
 for wlon, elon, nlat, slat, loc, cou, fil in zip(westlongitudes, eastlongitudes, northlatitudes, southlatitudes, location, country, filename):
     data= nc.Dataset(output_directory + fil)
@@ -123,5 +128,4 @@ capfactable=capfactable.rename(columns={"Netherlands":"NLD","Germany":"DEU","Bel
 capfacavg=capfactable.mean(axis=0)
 
 ##export to CSV, make sure to adjust the name when running a new set of coordinates or a new technology
-outputpath=r'C:\Users\hidde\Documents\Anaconda\Spyder\WIND DATA COLLECTION\capacityfactors'
-capfactable.to_csv(outputpath + '\\ERA5_pressurelevel\\AWE_onshore_pl.csv')
+capfactable.to_csv(outputpath + '\\ERA5_pressurelevel\\'+ csvname)
