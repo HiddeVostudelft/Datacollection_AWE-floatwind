@@ -11,9 +11,11 @@ import json
 import csv
 import numpy as np
 import time
+from pathlib import Path
 
-inputpath= 'YOUR DIRECTORY TO THIS FOLDER'
-outputpath= inputpath + '\\capacityfactors\\'
+
+inputpath= Path(__file__).parent
+outputpath= inputpath / 'capacityfactors'
 
 #SELECT COORDINATES
 coordinates=pd.read_csv('offshore_fixed_renninja_coordinates.csv')  #Fixed-Bottom offshore wind turbines
@@ -24,7 +26,7 @@ csvname='Offshorewind.csv'
 csvname='Floatingwind.csv'
 
 #POWER CURVE 15MW IEA TURBINE
-power_curve=pd.read_csv(inputpath + '\\power_curves\\IEA_15MW_offshore.csv')
+power_curve=pd.read_csv(inputpath / 'power_curves' / 'IEA_15MW_offshore.csv')
 
 daterange=pd.read_csv('daterange_renewablesninja.csv')
 startdate=daterange['date_from']
@@ -81,5 +83,5 @@ capfactable.columns=capfactable.columns.droplevel()
 capfactable=capfactable.rename(columns={"Denmark":"DNK","France":"FRA","Ireland":"IRL","Norway":"NOR","Sweden":"SWE","UK":"GBR"}) #floating only
 capfactable=capfactable.rename(columns={"Netherlands":"NLD","Germany":"DEU","Belgium":"BEL"}) #fixed offshore
 
-capfactable.to_csv(outputpath + csvname) 
+capfactable.to_csv(outputpath / csvname) 
 

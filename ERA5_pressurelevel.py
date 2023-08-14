@@ -11,13 +11,15 @@ import pandas as pd
 import csv
 import datetime
 import numpy as np
+from pathlib import Path
 
-inputpath= 'YOUR DIRECTORY TO THIS FOLDER'
-outputpath= inputpath + '\\capacityfactors\\'
+
+inputpath= Path(__file__).parent
+outputpath= inputpath / 'capacityfactors'
 
 ##SELECT POWER CURVE
-power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing1.csv')
-# power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_fixedwing2_offshore.csv')
+power_curve=pd.read_csv(inputpath / 'power_curves' / 'AWE_fixedwing1.csv')
+# power_curve=pd.read_csv(inputpath / 'power_curves' / 'AWE_fixedwing2_offshore.csv')
 
 #SELECT CORRECT SET OF COORDINATES
 coordinates=pd.read_csv('AWEcoordinates_shallow.csv') #shallow water AWE
@@ -40,7 +42,7 @@ location=location.tolist()
 country=coordinates['Country']
 
 #%% API REQUEST
-output_directory= inputpath + '\\netcdfs\\pressurelevel\\'
+output_directory= inputpath / 'netcdfs' / 'pressurelevel'
 
 import cdsapi
 c = cdsapi.Client()
@@ -84,7 +86,7 @@ for wlon, elon, nlat, slat, fil in zip(westlongitudes, eastlongitudes, northlati
         ],
         'area': [nlat,wlon,slat,elon,],
         'format': 'netcdf', 
-        }, output_directory + fil )
+        }, output_directory / fil )
     
 #%% DATA PROCESSING
 datetimeindex=pd.date_range("2013-01-01", periods= 52584, freq="H")
@@ -128,4 +130,4 @@ capfactable=capfactable.rename(columns={"Netherlands":"NLD","Germany":"DEU","Bel
 capfacavg=capfactable.mean(axis=0)
 
 ##export to CSV, make sure to adjust the name when running a new set of coordinates or a new technology
-capfactable.to_csv(outputpath + '\\ERA5_pressurelevel\\'+ csvname)
+capfactable.to_csv(outputpath / 'ERA5_pressurelevel' / csvname)
