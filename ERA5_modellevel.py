@@ -11,12 +11,13 @@ import pandas as pd
 import csv
 import datetime
 import numpy as np
+from pathlib import Path
 
 #PATHS AND SETTINGS FOR ONSHORE AWE
-inputpath= 'YOUR DIRECTORY TO THIS FOLDER'
-outputpath= inputpath + '\\capacityfactors\\'
+inputpath= Path(__file__).parent
+outputpath= inputpath / 'capacityfactors'
 csvname='awe_onshore_sw.csv'
-power_curve=pd.read_csv(inputpath + '\\power_curves\\AWE_500kw_softwing.csv')
+power_curve=pd.read_csv(inputpath / 'power_curves' / 'AWE_500kw_softwing.csv')
 
 coordinates=pd.read_csv('AWEcoordinates_onshore.csv')
 westlongitudes=coordinates['west_lon']
@@ -31,7 +32,7 @@ country=coordinates['Country']
 
 #%%
 # DATA COLLECTION API
-output_directory= inputpath + '\\netcdfs\\modellevel\\'
+output_directory= inputpath / 'netcdfs' / 'modellevel'
 import cdsapi
 c = cdsapi.Client()
 for wlon, elon, nlat, slat, fil in zip(westlongitudes, eastlongitudes, northlatitudes, southlatitudes, filename):
@@ -48,7 +49,7 @@ for wlon, elon, nlat, slat, fil in zip(westlongitudes, eastlongitudes, northlati
         'area': [nlat,wlon,slat,elon,],
         'grid': '0.25/0.25',
         'format': 'netcdf',
-    }, output_directory + fil )
+    }, output_directory / fil )
 
 #%% DATA PROCESSING, run after data collection is completed
 datetimeindex=pd.date_range("2013-01-01", periods= 52584, freq="H")
@@ -94,7 +95,7 @@ capfacavg=capfactable.mean(axis=0)
 
 ##export to CSV, make sure to adjust the name when running a new set of coordinates or a new technology
 
-capfactable.to_csv(outputpath + '\\ERA5_modellevel\\' + csvname)
+capfactable.to_csv(outputpath / 'ERA5_modellevel' / csvname)
 
 
 
