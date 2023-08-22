@@ -88,7 +88,7 @@ for wlon, elon, nlat, slat, fil in zip(westlongitudes, eastlongitudes, northlati
         'format': 'netcdf', 
         }, output_directory / fil )
     
-#%% DATA PROCESSING
+#%% DATA PROCESSING, run after data collection is completed
 datetimeindex=pd.date_range("2013-01-01", periods= 52584, freq="H")
 
 df_list = []
