@@ -7,18 +7,27 @@ ERA5 DOCUMENTATION
 More information on ERA5 downloads and how to use CDS API requests: https://confluence.ecmwf.int/display/CKB/ERA5%3A+data+documentation
 
 **Data extraction**
-the following scripts can be used to extract wind data.:
+the following scripts can be used to extract wind data:
+
 -ERA5_modellevel.py, for onshore AWE
+
 -ERA5_pressurelevel.py, for offshore AWE 
+
 -renewablesninja_API.py, for conventional and floating offshore wind
 
 Scripts can be altered to use for other technologies.
 
+
 Coordinates for individual technologies are provided in the following CSVs:
+
 -AWEcoordinates_deep.csv
+
 -AWEcoordinates_onshore.csv
+
 -AWEcoordinates_shallow.csv
+
 -offshore_fixed_renninja_coordinates.csv
+
 -offshore_float_renninja_coordinates.csv
 
 The coordinates in AWEcoordinates_deep.csv and AWEcoordinates_shallow.csv are the basically same as the coordinates in offshore_fixed_renninja_coordinates.csv and offshore_float_renninja_coordinates.csv, except the AWE coordinates are a grid of 0.25x 0.25 degrees and the offshore coordinates are only one specific coordinate. This is because of the difference in how renewables ninja and ERA5 requests work.
